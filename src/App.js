@@ -18,8 +18,7 @@ class App extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({ loading: true })
-    var page = 1;
-    fetch(`https://jsonmock.hackerrank.com/api/movies/search?Title=${this.state.value}&page=${page}`)
+    fetch(`https://jsonmock.hackerrank.com/api/movies/search?Title=${this.state.value}&page=1`)
     .then(resp => resp.json())
     .then(resp => {
       const arr = new Array(parseInt(resp.total_pages));
